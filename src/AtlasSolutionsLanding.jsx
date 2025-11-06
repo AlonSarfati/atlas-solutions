@@ -180,27 +180,60 @@ export default function AtlasSolutionsLanding() {
       <section id="materials" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 pb-16">
         <div className="flex items-end justify-between">
           <h2 className="text-2xl sm:text-3xl font-bold">Materials We Source</h2>
-          <a href="#contact" onClick={(e)=>scrollToSection(e, "contact")} className="text-sm underline underline-offset-4 hover:text-cyan-300">Don’t see yours? Ask us →</a>
+          <a
+            href="#contact"
+            onClick={(e)=>scrollToSection(e, "contact")}
+            className="text-sm underline underline-offset-4 hover:text-cyan-300"
+          >
+            Don’t see yours? Ask us →
+          </a>
         </div>
+
         <div className="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            {title:'Aluminum Powders & Pastes', img:'/images/aluminum-powder.jpg'},
-            {title:'Engineering Plastics & Resins', img:'/images/resin.jpg'},
-            {title:'Specialty Chemicals', img:'/images/chemicals.jpg'},
-            {title:'Metals & Alloys', img:'/images/metals.jpg'},
-            {title:'Coatings & Additives', img:'/images/coating.jpg'},
-            {title:'Packaging & Industrial Inputs', img:'/images/transport.jpg'}
+            {
+              title: 'Aluminum Powders & Pastes',
+              img: '/images/aluminum-powder.jpg',
+              desc: 'Used across coatings, construction, and advanced manufacturing — sourced from trusted global producers.'
+            },
+            {
+              title: 'Engineering Plastics & Resins',
+              img: '/images/resin.jpg',
+              desc: 'High-performance polymers for automotive, packaging, and industrial applications — tailored to your production needs.'
+            },
+            {
+              title: 'Specialty Chemicals',
+              img: '/images/chemicals.jpg',
+              desc: 'Industrial chemicals and additives for formulations, surface treatments, and manufacturing processes.'
+            },
+            {
+              title: 'Metals & Alloys',
+              img: '/images/metals.jpg',
+              desc: 'Ferrous and non-ferrous metals in various forms — supporting fabrication, machining, and production industries.'
+            },
+            {
+              title: 'Coatings & Additives',
+              img: '/images/coating.jpg',
+              desc: 'Pigments, binders, and performance enhancers for paints, inks, and industrial finishes.'
+            },
+            {
+              title: 'Packaging & Industrial Inputs',
+              img: '/images/transport.jpg',
+              desc: 'Industrial containers, protective films, and consumables for safe, efficient shipment and storage.'
+            }
           ].map((c) => (
             <div key={c.title} className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5">
               <div className="aspect-[16/10] overflow-hidden">
-                <img src={c.img} alt={c.title} className="h-full w-full object-cover transition scale-105 group-hover:scale-110 group-hover:opacity-90"/>
+                <img
+                  src={c.img}
+                  alt={c.title}
+                  className="h-full w-full object-cover transition scale-105 group-hover:scale-110 group-hover:opacity-90"
+                />
               </div>
               <div className="p-5">
-                <div className="flex items-center justify-between gap-4">
-                  <p className="font-semibold">{c.title}</p>
-                  <ArrowRight className="h-5 w-5 opacity-70"/>
-                </div>
-                <p className="mt-2 text-xs text-slate-300">Specs, CoA/CoC, and MSDS on request. MOQ flexible.</p>
+                <p className="font-semibold">{c.title}</p>
+                <p className="mt-2 text-sm text-slate-300">{c.desc}</p>
+                <p className="mt-3 text-xs text-slate-400">Specs and documentation available on request. MOQ flexible.</p>
               </div>
             </div>
           ))}
